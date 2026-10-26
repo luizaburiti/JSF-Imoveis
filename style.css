@@ -1756,3 +1756,22 @@ button {
         font-size: 25px !important;
     }
 }
+
+@media screen and (min-width: 561px) {
+    .hero-photo {
+        overflow: visible !important;
+    }
+
+    .hero-photo img {
+        -webkit-mask-image:
+            linear-gradient(to right, transparent 0%, black 30%, black 85%, transparent 100%),
+            linear-gradient(to bottom, transparent 0%, black 15%, black 75%, transparent 100%) !important;
+
+        mask-image:
+            linear-gradient(to right, transparent 0%, black 30%, black 85%, transparent 100%),
+            linear-gradient(to bottom, transparent 0%, black 15%, black 75%, transparent 100%) !important;
+
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+    }
+}
