@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça as oportunidades para se tornar um franqueado e fazer parte de um grupo de negócios.">
+  <title>Seja um Franqueado | JSF Imóveis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Maguila e Mix">
+      <span class="brand-mark"><span>MM</span><small>⌂</small></span>
+      <span class="brand-name">MAGUILA &amp; MIX<small>CONSULTORES DE IMÓVEIS</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Informações">
+      <span>São Paulo e região</span><i></i><span>Atuação em todo o Brasil</span>
+    </nav>
+    <div class="credentials">
+      <span><i class="fa-regular fa-file-lines"></i> CRECI 293638-F</span>
+      <span><i class="fa-regular fa-file-lines"></i> CRECI 305197-F</span>
+    </div>
+    <a class="top-contact" href="https://wa.me/5511996924703" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i><span>Falar com a JSF<small>(11) 99692-4703</small></span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
+      <div class="hero-copy">
+        <p class="script">Seja um</p>
+        <h1>FRANQUEADO<br><span>JSF IMÓVEIS</span></h1>
+        <p class="hero-description">Faça parte de um grupo sólido,<br>com 7 pilares de negócios e<br>benefícios para você e para o seu futuro.</p>
+        <div class="hero-facts">
+          <div><i class="fa-solid fa-location-dot"></i><span>São Paulo<br>e região</span></div>
+          <div><i class="fa-solid fa-map"></i><span>Atuação em todo<br>o Brasil</span></div>
+          <div><i class="fa-solid fa-shield-halved"></i><span>7 pilares<br>de negócios</span></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/herofoto.png" alt="Consultores imobiliários Maguila e Mix">
+      </div>
+    </section>
+
+    <section class="content-layout">
+      <div class="services">
+        <div class="section-intro">
+          <div><span class="eyebrow">O QUE FAZEMOS</span><h2>Nossos serviços</h2></div>
+          <p>Do imóvel ao jurídico e à saúde online.<br>Tudo o que você precisa, em um só lugar.</p>
+          <a href="#pilares" class="small-cta">Ver todos os serviços <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="service-grid" id="pilares">
+          <article class="service-card"><i class="fa-solid fa-house"></i><h3>Compra e venda<br>de imóveis</h3></article>
+          <article class="service-card"><i class="fa-solid fa-chart-column"></i><h3>Avaliação<br>mercadológica</h3></article>
+          <article class="service-card"><i class="fa-regular fa-file-lines"></i><h3>Assessoria para<br>inventário</h3></article>
+          <article class="service-card"><i class="fa-solid fa-handshake"></i><h3>Assessoria e<br>consultoria</h3></article>
+          <article class="service-card"><i class="fa-solid fa-scale-balanced"></i><h3>Advocacia<br>online</h3></article>
+          <article class="service-card"><i class="fa-solid fa-graduation-cap"></i><h3>Cursos IAD</h3></article>
+          <article class="service-card"><i class="fa-solid fa-store"></i><h3>Franquias<br>de negócios</h3></article>
+          <article class="service-card"><i class="fa-solid fa-heart-pulse"></i><h3>Saúde online</h3></article>
+          <article class="service-card"><i class="fa-solid fa-people-group"></i><h3>Geração de negócios<br>e emprego</h3></article>
+          <article class="service-card"><i class="fa-solid fa-star"></i><h3>E muito mais<br>para você!</h3></article>
+        </div>
+      </div>
+
+      <aside class="lead-card" id="contato">
+        <span class="form-eyebrow">FALE COM UM DOS NOSSOS CONSULTORES</span>
+        <h2>E SEJA UM FRANQUEADO!</h2>
+        <p>Preencha os seus dados e escolha como prefere falar com a gente.</p>
+        <form id="leadForm">
+          <label class="input-wrap"><i class="fa-regular fa-user"></i><input id="nome" name="nome" type="text" placeholder="Nome completo" autocomplete="name" required></label>
+          <label class="input-wrap"><i class="fa-solid fa-phone"></i><input id="telefone" name="telefone" type="tel" placeholder="Número de telefone (com DDD)" autocomplete="tel" required></label>
+          <label class="input-wrap"><i class="fa-regular fa-envelope"></i><input id="email" name="email" type="email" placeholder="E-mail" autocomplete="email" required></label>
+          <fieldset class="interests">
+            <legend>Tenho interesse em</legend>
+            <div class="interest-grid">
+              <label><input type="checkbox" name="interesse" value="Compra e venda de imóveis"> Compra e venda de imóveis</label>
+              <label><input type="checkbox" name="interesse" value="Cursos IAD"> Cursos IAD</label>
+              <label><input type="checkbox" name="interesse" value="Avaliação mercadológica"> Avaliação mercadológica</label>
+              <label><input type="checkbox" name="interesse" value="Franquias de negócios"> Franquias de negócios</label>
+              <label><input type="checkbox" name="interesse" value="Assessoria para inventário"> Assessoria para inventário</label>
+              <label><input type="checkbox" name="interesse" value="Atendimento de saúde online"> Atendimento de saúde online</label>
+              <label><input type="checkbox" name="interesse" value="Assessoria e consultoria"> Assessoria e consultoria</label>
+              <label><input type="checkbox" name="interesse" value="Geração de negócios e emprego"> Geração de negócios e emprego</label>
+              <label><input type="checkbox" name="interesse" value="Advocacia online"> Advocacia online</label>
+            </div>
+          </fieldset>
+          <button class="whatsapp-btn personalized" type="submit"><i class="fa-brands fa-whatsapp"></i><span><strong>Ir para o WhatsApp</strong><small>Converse agora com um consultor</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
+          <a class="whatsapp-btn direct" href="https://wa.me/5511996924703" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span><strong>Enviar mensagem no WhatsApp</strong><small>Inicie a conversa sem preencher nada</small></span><i class="fa-solid fa-chevron-right arrow"></i></a>
+          <p class="privacy-note">Seus dados serão usados para retorno sobre seu interesse.</p>
+        </form>
+      </aside>
+
+      <a class="projects-card" href="https://wa.me/5511996924703?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20os%20projetos%20representados." target="_blank" rel="noopener">
+        <span class="project-icon"><i class="fa-solid fa-city"></i></span>
+        <span class="project-copy"><strong>Representações</strong><small>Conheça os projetos que representamos e navegue pelo nosso catálogo no WhatsApp.</small><b>Ver projetos <i class="fa-solid fa-arrow-right"></i></b></span>
+        <span class="project-buildings"><i class="fa-solid fa-city"></i></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="difference">Eu faço a diferença<span></span></div>
+      <div class="footer-location"><i class="fa-solid fa-location-dot"></i><span><strong>São Paulo e região</strong><small>Atuação em todo o Brasil</small></span></div>
+      <a class="footer-whatsapp" href="https://wa.me/5511996924703" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span><strong>Falar com a JSF</strong><small>(11) 99692-4703</small></span></a>
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark"><span>MM</span><small>⌂</small></span><span class="brand-name">MAGUILA &amp; MIX<small>CONSULTORES DE IMÓVEIS</small></span></a>
+    </div>
+    <div class="copyright">© 2026 JSF Imóveis · São Paulo</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
