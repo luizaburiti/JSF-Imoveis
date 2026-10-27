@@ -224,7 +224,7 @@ background: linear-gradient(
 }
 
 .hero h1 span {
-    color: rgb(0, 234, 255);
+    color: rgb(0, 234, 255) !important;
     margin-bottom: 1020px;
 }
 
