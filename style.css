@@ -3022,32 +3022,26 @@ html.js-scroll .scroll-reveal.is-visible {
         color: #ffffff !important;
     }
 }
-/* HERO MAIS COMPACTO NO SITE PUBLICADO - SOMENTE PC */
+/* DIMINUIR SOMENTE AS LETRAS DO HERO - PC */
 @media screen and (min-width: 901px) {
 
-    .hero {
-        height: 470px !important;
-        min-height: 470px !important;
-        max-height: 470px !important;
-    }
-
     .hero-copy .script {
-        font-size: 30px !important;
+        font-size: 28px !important;
     }
 
     .hero h1 {
-        font-size: clamp(42px, 3.8vw, 58px) !important;
+        font-size: clamp(44px, 3.8vw, 58px) !important;
         line-height: 1.02 !important;
-        margin: 8px 0 18px !important;
     }
 
-    .hero-description {
+    .hero .hero-description {
         font-size: 17px !important;
         line-height: 1.6 !important;
     }
 
-    .hero-facts {
-        margin-top: 18px !important;
-    }
+}
 
+/* FRANQUEADO BRANCO EM TODAS AS TELAS */
+.hero h1 span[data-i18n="franchise"] {
+    color: #ffffff !important;
 }
