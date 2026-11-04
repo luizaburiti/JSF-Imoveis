@@ -3022,3 +3022,32 @@ html.js-scroll .scroll-reveal.is-visible {
         color: #ffffff !important;
     }
 }
+/* HERO MAIS COMPACTO NO SITE PUBLICADO - SOMENTE PC */
+@media screen and (min-width: 901px) {
+
+    .hero {
+        height: 470px !important;
+        min-height: 470px !important;
+        max-height: 470px !important;
+    }
+
+    .hero-copy .script {
+        font-size: 30px !important;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 3.8vw, 58px) !important;
+        line-height: 1.02 !important;
+        margin: 8px 0 18px !important;
+    }
+
+    .hero-description {
+        font-size: 17px !important;
+        line-height: 1.6 !important;
+    }
+
+    .hero-facts {
+        margin-top: 18px !important;
+    }
+
+}
