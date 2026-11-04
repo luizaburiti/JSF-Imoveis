@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,83 +6,450 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conheça as oportunidades para se tornar um franqueado e fazer parte de um grupo de negócios.">
   <title>Seja um Franqueado | JSF Imóveis</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Allura&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css.css">
 </head>
+
 <body>
+
+  <!-- CABEÇALHO -->
   <header class="topbar">
+
     <a class="brand" href="#inicio" aria-label="Maguila e Mix">
-      <span class="brand-mark"><span>MM</span><small>⌂</small></span>
-      <span class="brand-name">MAGUILA &amp; MIX<small>CONSULTORES DE IMÓVEIS</small></span>
+      <span class="brand-mark">
+        <span>MM</span>
+        <small>⌂</small>
+      </span>
+
+      <span class="brand-name">
+        MAGUILA &amp; MIX
+        <small data-i18n="brandSubtitle">CONSULTORES DE IMÓVEIS</small>
+      </span>
     </a>
+
     <nav class="top-nav" aria-label="Informações">
-      <span>São Paulo e região</span><i></i><span>Atuação em todo o Brasil</span>
+      <span data-i18n="locationShort">São Paulo e região</span>
+      <i></i>
+      <span data-i18n="nationalShort">Atuação em todo o Brasil</span>
     </nav>
+
     <div class="credentials">
       <span><i class="fa-regular fa-file-lines"></i> CRECI 293638-F</span>
       <span><i class="fa-regular fa-file-lines"></i> CRECI 305197-F</span>
     </div>
+
+    <div class="language-control">
+      <label for="languageSelect" class="sr-only">Idioma</label>
+
+      <select id="languageSelect" aria-label="Selecionar idioma">
+        <option value="pt">🇧🇷 Português</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="en">🇺🇸 English</option>
+        <option value="zh">🇨🇳 中文</option>
+      </select>
+    </div>
+
     <a class="top-contact" href="https://wa.me/5511996924703" target="_blank" rel="noopener">
-      <i class="fa-brands fa-whatsapp"></i><span>Falar com a JSF<small>(11) 99692-4703</small></span>
+      <i class="fa-brands fa-whatsapp"></i>
+
+      <span>
+        <span data-i18n="headerContact">Falar com a JSF</span>
+        <small>(11) 99692-4703</small>
+      </span>
     </a>
+
   </header>
 
   <main>
+
+    <!-- HERO -->
     <section class="hero" id="inicio">
+
       <div class="hero-overlay"></div>
+
       <div class="hero-copy">
-        <p class="script">Seja um</p>
-        <h1>FRANQUEADO<br><span>JSF IMÓVEIS</span></h1>
-        <p class="hero-description">
-    Para você que quer ter uma
-    <strong class="destaque-franquia">franquia gratuita</strong>
-    de imobiliária, com imóveis no mundo todo! Faça já o seu cadastro!
-</p>
+
+        <p class="script" data-i18n="become">Seja um</p>
+
+        <h1>
+          <span data-i18n="franchise">FRANQUEADO</span><br>
+          <span>JSF IMÓVEIS</span>
+        </h1>
+
+            <p class="hero-description">
+            Para você que quer ter uma
+            <strong class="destaque-franquia">franquia gratuita</strong>
+            de imobiliária, com imóveis no mundo todo! Faça já o seu cadastro!
+        </p>
+
         <div class="hero-facts">
-          <div><i class="fa-solid fa-location-dot"></i><span>São Paulo<br>e região</span></div>
-          <div><i class="fa-solid fa-map"></i><span>Atuação em todo<br>o Brasil</span></div>
-          <div><i class="fa-solid fa-shield-halved"></i><span>7 pilares<br>de negócios</span></div>
+
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <span data-i18n="locationShort">São Paulo e região</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-map"></i>
+            <span data-i18n="nationalShort">Atuação em todo o Brasil</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span data-i18n="sevenShort">7 pilares de negócios</span>
+          </div>
+
         </div>
+
       </div>
+
       <div class="hero-photo">
-        <img src="/herofoto.png" alt="Consultores imobiliários Maguila e Mix">
+        <img src="assets/herofoto.png" alt="Consultores imobiliários Maguila e Mix">
+      </div>
+
+      <!-- CARD EXIBIDO NO CELULAR -->
+      <div class="hero-side-card">
+
+        <div class="hero-side-icon">
+          <i class="fa-solid fa-building-circle-check"></i>
+        </div>
+
+        <span class="hero-side-label" data-i18n="heroSideLabel">
+          UMA NOVA FORMA DE EMPREENDER
+        </span>
+
+        <h2 data-i18n="heroSideTitle">
+          Seu próximo passo começa aqui.
+        </h2>
+
+        <p data-i18n="heroSideText">
+          Conheça o modelo de franquia imobiliária da JSF e descubra novas possibilidades de crescimento.
+        </p>
+
+        <a href="#contato">
+          <span data-i18n="heroSideButton">Conhecer a oportunidade</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUEM SOMOS -->
+    <section class="about-section new-section" id="quem-somos">
+
+      <div class="about-shell">
+
+        <header class="about-heading">
+
+          <span class="about-kicker" data-i18n="aboutKickerNew">
+            CONHEÇA A JSF
+          </span>
+
+          <h2 data-i18n="aboutTitleNew">Quem somos</h2>
+
+          <p data-i18n="aboutSubtitleNew">
+            Conectando pessoas, oportunidades e novos caminhos para empreender.
+          </p>
+
+        </header>
+
+        <div class="about-layout">
+
+          <!-- CARD PRINCIPAL -->
+          <article class="about-main-card">
+
+            <span class="about-main-label">
+              <i class="fa-solid fa-building"></i>
+              <span data-i18n="aboutMainLabel">NOSSA EMPRESA</span>
+            </span>
+
+            <h3 data-i18n="aboutMainTitle">
+              Muito mais que uma imobiliária.
+            </h3>
+
+            <p data-i18n="aboutMainP1">
+              A JSF transforma o ecossistema imobiliário e de negócios por meio da inovação, da acessibilidade e de oportunidades para quem deseja empreender.
+            </p>
+
+            <p data-i18n="aboutMainP2">
+              Nossa proposta é conectar pessoas a possibilidades reais de crescimento, oferecendo estrutura, conhecimento e apoio para desenvolver novos negócios.
+            </p>
+
+            <div class="about-main-footer">
+              <span class="about-main-symbol">JSF</span>
+              <span data-i18n="aboutFooter">
+                Imóveis, negócios e oportunidades.
+              </span>
+            </div>
+
+          </article>
+
+          <!-- DESTAQUES -->
+          <div class="about-highlights">
+
+            <article class="about-feature">
+
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+
+              <div class="about-feature-content">
+
+                <span class="about-feature-label" data-i18n="feature1Label">
+                  MODELO DE FRANQUIA
+                </span>
+
+                <h3 data-i18n="feature1Title">100% gratuita</h3>
+
+                <p data-i18n="feature1Text">
+                  Um modelo de franchising imobiliário sem cobrança de taxa de franquia.
+                </p>
+
+              </div>
+
+              <span class="about-feature-number">01</span>
+
+            </article>
+
+            <article class="about-feature">
+
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              <div class="about-feature-content">
+
+                <span class="about-feature-label" data-i18n="feature2Label">
+                  POSSIBILIDADES
+                </span>
+
+                <h3 data-i18n="feature2Title">Mais de 200 modelos</h3>
+
+                <p data-i18n="feature2Text">
+                  Apoio para diferentes modelos de negócios e oportunidades em vários segmentos.
+                </p>
+
+              </div>
+
+              <span class="about-feature-number">02</span>
+
+            </article>
+
+            <article class="about-feature">
+
+              <div class="about-feature-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+
+              <div class="about-feature-content">
+
+                <span class="about-feature-label" data-i18n="feature3Label">
+                  DESENVOLVIMENTO
+                </span>
+
+                <h3 data-i18n="feature3Title">Conhecimento e suporte</h3>
+
+                <p data-i18n="feature3Text">
+                  Plataforma, e-books práticos, cursos EAD e apoio para desenvolver ideias e negócios.
+                </p>
+
+              </div>
+
+              <span class="about-feature-number">03</span>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOSSOS DEZ SERVIÇOS -->
+    <section class="services-section" id="nossos-servicos">
+
+      <div class="services-shell">
+
+        <header class="services-header">
+
+          <div class="services-heading">
+
+            <span class="services-eyebrow" data-i18n="servicesEyebrowNew">
+              SOLUÇÕES E OPORTUNIDADES
+            </span>
+
+            <h2 data-i18n="servicesTitleNew">Nossos serviços</h2>
+
+            <span class="services-heading-line"></span>
+
+          </div>
+
+          <div class="services-intro">
+
+            <p data-i18n="servicesIntroNew">
+              Um ecossistema de soluções que conecta pessoas, empresas e oportunidades em diferentes segmentos.
+            </p>
+
+            <span class="services-count">
+              <i class="fa-solid fa-layer-group"></i>
+              <span data-i18n="servicesCountNew">10 frentes de atuação</span>
+            </span>
+
+          </div>
+
+        </header>
+
+        <div class="services-grid" id="pilares">
+
+          <article class="service-item">
+            <span class="service-number">01</span>
+            <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+            <h3 data-i18n="service1Title">Compra e venda de imóveis</h3>
+            <p data-i18n="service1Text">Soluções e oportunidades no mercado imobiliário.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">02</span>
+            <div class="service-icon"><i class="fa-solid fa-chart-column"></i></div>
+            <h3 data-i18n="service2Title">Avaliação mercadológica</h3>
+            <p data-i18n="service2Text">Análise de imóveis e de seu posicionamento no mercado.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">03</span>
+            <div class="service-icon"><i class="fa-regular fa-file-lines"></i></div>
+            <h3 data-i18n="service3Title">Assessoria para inventário</h3>
+            <p data-i18n="service3Text">Apoio em demandas relacionadas a inventários.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">04</span>
+            <div class="service-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3 data-i18n="service4Title">Assessoria e consultoria</h3>
+            <p data-i18n="service4Text">Orientação e suporte para diferentes necessidades.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">05</span>
+            <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3 data-i18n="service5Title">Advocacia online</h3>
+            <p data-i18n="service5Text">Serviços e atendimento jurídico em formato digital.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">06</span>
+            <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3 data-i18n="service6Title">Cursos IAD</h3>
+            <p data-i18n="service6Text">Capacitação e conhecimento para desenvolver habilidades.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">07</span>
+            <div class="service-icon"><i class="fa-solid fa-store"></i></div>
+            <h3 data-i18n="service7Title">Franquias de negócios</h3>
+            <p data-i18n="service7Text">Oportunidades para empreender e desenvolver negócios.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">08</span>
+            <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3 data-i18n="service8Title">Saúde online</h3>
+            <p data-i18n="service8Text">Soluções e serviços de saúde em formato digital.</p>
+          </article>
+
+          <article class="service-item">
+            <span class="service-number">09</span>
+            <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3 data-i18n="service9Title">Geração de negócios e emprego</h3>
+            <p data-i18n="service9Text">Conexões para impulsionar oportunidades e trabalho.</p>
+          </article>
+
+          <article class="service-item service-featured">
+            <span class="service-number">10</span>
+            <div class="service-icon"><i class="fa-solid fa-star"></i></div>
+            <h3 data-i18n="service10Title">E muito mais para você!</h3>
+            <p data-i18n="service10Text">Conheça outras possibilidades do ecossistema JSF.</p>
+            <i class="fa-solid fa-arrow-right service-featured-arrow"></i>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="offerings-section new-section" id="servicos">
+      <div class="section-heading"><span class="section-kicker" data-i18n="offerKicker">SOLUÇÕES PARA SUA EMPRESA</span><h2 data-i18n="offerTitle">Nossos serviços personalizados</h2><p data-i18n="offerIntro">Soluções para fortalecer sua marca, sua presença digital e a identidade do seu negócio.</p></div>
+      <div class="offer-grid">
+        <article class="offer-card"><i class="fa-solid fa-laptop-code"></i><h3 data-i18n="webTitle">Criação de sites</h3><p data-i18n="webText">Sites profissionais para apresentar sua empresa, seus serviços e facilitar o contato com clientes.</p><span class="offer-price" data-i18n="webPrice">Projetos a partir de R$ 1.500</span></article>
+        <article class="offer-card"><i class="fa-solid fa-shirt"></i><h3 data-i18n="uniformTitle">Uniformes personalizados</h3><p data-i18n="uniformText">Camisetas, polos, bonés e uniformes personalizados para valorizar a identidade da sua equipe.</p></article>
+        <article class="offer-card"><i class="fa-solid fa-gift"></i><h3 data-i18n="giftsTitle">Brindes e personalizados</h3><p data-i18n="giftsText">Chaveiros, brindes corporativos e produtos personalizados para divulgar sua marca.</p></article>
       </div>
     </section>
 
-    <section class="content-layout">
-      <div class="services">
-        <div class="section-intro">
-          <div><span class="eyebrow">O QUE FAZEMOS</span><h2>Nossos serviços</h2></div>
-          <p>Do imóvel ao jurídico e à saúde online.<br>Tudo o que você precisa, em um só lugar.</p>
-          <a href="#pilares" class="small-cta">Ver todos os serviços <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-        <div class="service-grid" id="pilares">
-          <article class="service-card"><i class="fa-solid fa-house"></i><h3>Compra e venda<br>de imóveis</h3></article>
-          <article class="service-card"><i class="fa-solid fa-chart-column"></i><h3>Avaliação<br>mercadológica</h3></article>
-          <article class="service-card"><i class="fa-regular fa-file-lines"></i><h3>Assessoria para<br>inventário</h3></article>
-          <article class="service-card"><i class="fa-solid fa-handshake"></i><h3>Assessoria e<br>consultoria</h3></article>
-          <article class="service-card"><i class="fa-solid fa-scale-balanced"></i><h3>Advocacia<br>online</h3></article>
-          <article class="service-card"><i class="fa-solid fa-graduation-cap"></i><h3>Cursos IAD</h3></article>
-          <article class="service-card"><i class="fa-solid fa-store"></i><h3>Franquias<br>de negócios</h3></article>
-          <article class="service-card"><i class="fa-solid fa-heart-pulse"></i><h3>Saúde online</h3></article>
-          <article class="service-card"><i class="fa-solid fa-people-group"></i><h3>Geração de negócios<br>e emprego</h3></article>
-          <article class="service-card"><i class="fa-solid fa-star"></i><h3>E muito mais<br>para você!</h3></article>
-        </div>
-      </div>
 
+
+<section class="video-section new-section" id="video-institucional">
+
+  <div class="section-heading">
+    <span class="section-kicker" data-i18n="testimonyKicker">DEPOIMENTO</span>
+
+    <h2 data-i18n="testimonyTitle">Trabalhos para idosos do mundo todo</h2>
+
+    <p data-i18n="testimonyIntro">
+      Veja a entrevista com o Sr. Luis, aposentado, que está trabalhando home office conosco.
+    </p>
+  </div>
+
+  <div class="video-player">
+    <video controls playsinline preload="metadata">
+      <source src="assets/videosite.mp4" type="video/mp4">
+      Seu navegador não suporta a reprodução deste vídeo.
+    </video>
+  </div>
+
+</section>
+
+    <section class="pillars-section new-section" id="sete-pilares">
+      <div class="section-heading"><span class="section-kicker" data-i18n="pillarsKicker">UM ECOSSISTEMA DE OPORTUNIDADES</span><h2 data-i18n="pillarsTitle">Os 7 pilares de negócios</h2><p data-i18n="pillarsIntro">Conheça as frentes que compõem nosso ecossistema. Estes conteúdos são provisórios e serão atualizados.</p></div>
+      <div class="pillars-grid">
+        <article class="pillar-card"><span>01</span><i class="fa-solid fa-house"></i><h3 data-i18n="pillar1">Mercado imobiliário</h3><p data-i18n="pillarDesc">Soluções e oportunidades no setor imobiliário.</p></article>
+        <article class="pillar-card"><span>02</span><i class="fa-solid fa-scale-balanced"></i><h3 data-i18n="pillar2">Jurídico e documentação</h3><p data-i18n="pillarDesc">Orientação e apoio para diferentes necessidades.</p></article>
+        <article class="pillar-card"><span>03</span><i class="fa-solid fa-graduation-cap"></i><h3 data-i18n="pillar3">Educação e capacitação</h3><p data-i18n="pillarDesc">Conhecimento para desenvolver novas habilidades.</p></article>
+        <article class="pillar-card"><span>04</span><i class="fa-solid fa-store"></i><h3 data-i18n="pillar4">Franquias e negócios</h3><p data-i18n="pillarDesc">Caminhos para empreender e crescer.</p></article>
+        <article class="pillar-card"><span>05</span><i class="fa-solid fa-heart-pulse"></i><h3 data-i18n="pillar5">Saúde e bem-estar</h3><p data-i18n="pillarDesc">Acesso a serviços e soluções de cuidado.</p></article>
+        <article class="pillar-card"><span>06</span><i class="fa-solid fa-laptop"></i><h3 data-i18n="pillar6">Tecnologia e inovação</h3><p data-i18n="pillarDesc">Ferramentas para conectar pessoas e oportunidades.</p></article>
+        <article class="pillar-card"><span>07</span><i class="fa-solid fa-people-group"></i><h3 data-i18n="pillar7">Geração de negócios</h3><p data-i18n="pillarDesc">Conexões que impulsionam trabalho e renda.</p></article>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO -->
+    <section class="contact-section">
       <aside class="lead-card" id="contato">
-        <span class="form-eyebrow">FALE COM UM DOS NOSSOS CONSULTORES</span>
-        <h2>E SEJA UM FRANQUEADO!</h2>
-        <p>Preencha os seus dados e escolha como prefere falar com a gente.</p>
+        <span class="form-eyebrow" data-i18n="formEyebrow">FALE COM UM DOS NOSSOS CONSULTORES</span>
+        <h2 data-i18n="formTitle">E SEJA UM FRANQUEADO!</h2>
+        <p data-i18n="formIntro">Preencha os seus dados e escolha como prefere falar com a gente.</p>
+
         <form id="leadForm">
-          <label class="input-wrap"><i class="fa-regular fa-user"></i><input id="nome" name="nome" type="text" placeholder="Nome completo" autocomplete="name" required></label>
-          <label class="input-wrap"><i class="fa-solid fa-phone"></i><input id="telefone" name="telefone" type="tel" placeholder="Número de telefone (com DDD)" autocomplete="tel" required></label>
-          <label class="input-wrap"><i class="fa-regular fa-envelope"></i><input id="email" name="email" type="email" placeholder="E-mail" autocomplete="email" required></label>
+          <label class="input-wrap"><i class="fa-regular fa-user"></i><input id="nome" name="nome" type="text" placeholder="Nome completo" data-i18n-placeholder="namePlaceholder" autocomplete="name" required></label>
+
+          <label class="input-wrap"><i class="fa-solid fa-phone"></i><input id="telefone" name="telefone" type="tel" placeholder="Número de telefone (com DDD)" data-i18n-placeholder="phonePlaceholder" autocomplete="tel" required></label>
+
+          <label class="input-wrap"><i class="fa-regular fa-envelope"></i><input id="email" name="email" type="email" placeholder="E-mail" data-i18n-placeholder="emailPlaceholder" autocomplete="email" required></label>
+
           <fieldset class="interests">
-            <legend>Tenho interesse em</legend>
+            <legend data-i18n="interestLegend">Tenho interesse em</legend>
             <div class="interest-grid">
               <label><input type="checkbox" name="interesse" value="Compra e venda de imóveis"> Compra e venda de imóveis</label>
               <label><input type="checkbox" name="interesse" value="Cursos IAD"> Cursos IAD</label>
@@ -94,32 +462,47 @@
               <label><input type="checkbox" name="interesse" value="Advocacia online"> Advocacia online</label>
             </div>
           </fieldset>
-          <button class="whatsapp-btn personalized" type="submit"><i class="fa-brands fa-whatsapp"></i><span><strong>Ir para o WhatsApp</strong><small>Converse agora com um consultor</small></span><i class="fa-solid fa-chevron-right arrow"></i></button>
-          <a class="whatsapp-btn direct" href="https://wa.me/5511996924703" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span><strong>Enviar mensagem no WhatsApp</strong><small>Inicie a conversa sem preencher nada</small></span><i class="fa-solid fa-chevron-right arrow"></i></a>
-          <p class="privacy-note">Seus dados serão usados para retorno sobre seu interesse.</p>
+
+          <button class="whatsapp-btn personalized" type="submit">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span><strong data-i18n="goWhatsapp">Ir para o WhatsApp</strong><small data-i18n="talkConsultant">Converse agora com um consultor</small></span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+          </button>
+
+          <a class="whatsapp-btn direct" href="https://wa.me/5511996924703" target="_blank" rel="noopener">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span><strong data-i18n="sendWhatsapp">Enviar mensagem no WhatsApp</strong><small data-i18n="startChat">Inicie a conversa sem preencher nada</small></span>
+            <i class="fa-solid fa-chevron-right arrow"></i>
+          </a>
+
+          <p class="privacy-note" data-i18n="privacy">Seus dados serão usados para retorno sobre seu interesse.</p>
         </form>
       </aside>
+    </section>
 
+    <!-- REPRESENTAÇÕES -->
+    <section class="representations-section">
       <a class="projects-card" href="https://wa.me/5511996924703?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20os%20projetos%20representados." target="_blank" rel="noopener">
         <span class="project-icon"><i class="fa-solid fa-city"></i></span>
-        <span class="project-copy"><strong>Representações</strong><small>Conheça os projetos que representamos e navegue pelo nosso catálogo no WhatsApp.</small><b>Ver projetos <i class="fa-solid fa-arrow-right"></i></b></span>
+        <span class="project-copy">
+          <strong data-i18n="representations">Representações</strong>
+          <small>Conheça os projetos que representamos e navegue pelo nosso catálogo no WhatsApp.</small>
+          <b data-i18n="viewProjects">Ver projetos <i class="fa-solid fa-arrow-right"></i></b>
+        </span>
         <span class="project-buildings"><i class="fa-solid fa-city"></i></span>
       </a>
     </section>
+    
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <div class="difference">Eu faço a diferença<span></span></div>
+      <div class="difference" data-i18n="difference">Eu faço a diferença<span></span></div>
       <div class="footer-location"><i class="fa-solid fa-location-dot"></i><span><strong>São Paulo e região</strong><small>Atuação em todo o Brasil</small></span></div>
       <a class="footer-whatsapp" href="https://wa.me/5511996924703" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span><strong>Falar com a JSF</strong><small>(11) 99692-4703</small></span></a>
       <a class="brand footer-brand" href="#inicio"><span class="brand-mark"><span>MM</span><small>⌂</small></span><span class="brand-name">MAGUILA &amp; MIX<small>CONSULTORES DE IMÓVEIS</small></span></a>
     </div>
-<div class="copyright" style="font-size: 13px !important; line-height: 1.5;">
-    © 2026 JSF Imóveis · São Paulo - Desenvolvido por 
-    <a href="https://luizaburiti.github.io/Portf-lio-Luiza-Buriti/" target="_blank" style="font-size: 13px !important; color: inherit; text-decoration: underline;">Luiza Buriti</a>
-</div>
-
+    <div class="copyright">© 2026 JSF Imóveis · São Paulo</div>
   </footer>
   <script src="script.js"></script>
 </body>
