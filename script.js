@@ -461,3 +461,102 @@ const delay = isMobile
   });
 
 })();
+
+
+
+/* =========================================
+   NOVAS OPORTUNIDADES JSF
+========================================= */
+
+// Botões de interesse das novas oportunidades.
+// Ao clicar, seleciona o interesse no formulário
+// e direciona a pessoa para a área de contato.
+
+document.querySelectorAll(
+  ".opportunities-section [data-interest]"
+).forEach((button) => {
+
+  button.addEventListener("click", function () {
+
+    const interest = this.dataset.interest;
+
+    const contactForm = document.getElementById("leadForm");
+
+    if (!contactForm || !interest) {
+      return;
+    }
+
+    const interestInputs = contactForm.querySelectorAll(
+      'input[name="interesse"]'
+    );
+
+    let matched = false;
+
+    interestInputs.forEach((input) => {
+
+      if (input.value.trim() === interest.trim()) {
+
+        input.checked = true;
+        matched = true;
+
+      }
+
+    });
+
+    // Se o interesse ainda não existir entre as opções
+    // do formulário, cria uma opção selecionada.
+    if (!matched) {
+
+      const interestGrid = contactForm.querySelector(
+        ".interest-grid"
+      );
+
+      if (interestGrid) {
+
+        const label = document.createElement("label");
+
+        const input = document.createElement("input");
+
+        input.type = "checkbox";
+        input.name = "interesse";
+        input.value = interest;
+        input.checked = true;
+
+        label.appendChild(input);
+        label.appendChild(
+          document.createTextNode(" " + interest)
+        );
+
+        interestGrid.appendChild(label);
+
+      }
+
+    }
+
+  });
+
+});
+
+
+// WHATSAPP FIXO
+
+(function () {
+
+  const whatsappNumber = "5511996924703";
+
+  const floatingButton = document.querySelector(
+    ".whatsapp-floating"
+  );
+
+  if (!floatingButton) {
+    return;
+  }
+
+  floatingButton.href =
+    `https://wa.me/${whatsappNumber}`;
+
+  floatingButton.target = "_blank";
+
+  floatingButton.rel = "noopener noreferrer";
+
+})();
