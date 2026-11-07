@@ -3022,26 +3022,440 @@ html.js-scroll .scroll-reveal.is-visible {
         color: #ffffff !important;
     }
 }
-/* DIMINUIR SOMENTE AS LETRAS DO HERO - PC */
-@media screen and (min-width: 901px) {
 
-    .hero-copy .script {
-        font-size: 28px !important;
-    }
+/* =========================================
+   NOVAS OPORTUNIDADES JSF
+========================================= */
 
-    .hero h1 {
-        font-size: clamp(44px, 3.8vw, 58px) !important;
-        line-height: 1.02 !important;
-    }
+.opportunities-section {
+  position: relative;
+  padding: 100px 6%;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #f4f8fd 0%,
+      #ffffff 55%,
+      #edf4fb 100%
+    );
+}
 
-    .hero .hero-description {
-        font-size: 17px !important;
-        line-height: 1.6 !important;
-    }
+.opportunities-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.opportunities-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.opportunities-kicker {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: #1762a5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.opportunities-heading h2 {
+  margin: 0;
+  color: #102c4c;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.opportunities-heading p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: #64758a;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* GRADE */
+
+.opportunities-section .opportunity-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 32px;
+  overflow: hidden;
+  border: 1px solid #e1eaf4;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(20, 55, 95, 0.06);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.opportunities-section .opportunity-card:hover {
+  transform: translateY(-5px);
+  border-color: #b9d5ef;
+  box-shadow: 0 20px 45px rgba(20, 55, 95, 0.11);
+}
+
+.opportunities-section .opportunity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1762a5, #0d3764);
+  font-size: 22px;
+}
+
+.opportunities-section .opportunity-label {
+  margin-bottom: 10px;
+  color: #1762a5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.opportunities-section .opportunity-card h3 {
+  margin: 0;
+  color: #102c4c;
+  font-size: 23px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.opportunities-section .opportunity-card > p {
+  margin: 14px 0 0;
+  color: #68798d;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.opportunities-section .opportunity-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 22px;
+  color: #1762a5;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+
+.opportunities-section .opportunity-link:hover {
+  gap: 17px;
+}
+
+.opportunities-section .opportunity-link i {
+  flex-shrink: 0;
+}
+
+
+/* PARAGUAI */
+
+.paraguay-card {
+  margin-bottom: 24px;
+  background:
+    linear-gradient(135deg, #ffffff 0%, #f3f8fd 100%) !important;
+}
+
+.paraguay-card .opportunity-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: 8px;
+}
+
+
+/* CARDS DE KITNETS E MARKETING */
+
+.kitnets-card,
+.marketing-card {
+  margin-bottom: 24px;
+}
+
+
+/* VÍDEO */
+
+.opportunity-video {
+  width: 100%;
+  margin-top: 22px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #0b1f35;
+  aspect-ratio: 16 / 9;
+}
+
+.opportunity-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* DEPOIMENTO */
+
+.luiz-quote {
+  margin: 22px 0 0;
+  padding: 24px;
+  border-left: 4px solid #1762a5;
+  border-radius: 0 14px 14px 0;
+  background: #f3f7fc;
+}
+
+.luiz-quote p {
+  margin: 0;
+  color: #52677f;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.luiz-quote footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 18px;
+}
+
+.luiz-quote footer strong {
+  color: #102c4c;
+  font-size: 14px;
+}
+
+.luiz-quote footer span {
+  color: #7b8ba0;
+  font-size: 11px;
+}
+
+
+/* QR CODE */
+
+.qr-code-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 220px;
+  min-height: 220px;
+  margin: 24px auto 0;
+  padding: 12px;
+  border: 1px solid #e1eaf4;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.qr-code-placeholder img {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* CTA FINAL */
+
+.opportunities-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 35px;
+  padding: 35px 40px;
+  border-radius: 22px;
+  color: #ffffff;
+  background: linear-gradient(115deg, #102c4c, #1762a5);
+}
+
+.opportunities-cta-copy > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #c8e2fb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.opportunities-cta-copy h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.3;
+}
+
+.opportunities-cta-copy p {
+  margin: 12px 0 0;
+  color: #d7e5f4;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.opportunities-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 12px;
+  padding: 15px 22px;
+  border-radius: 12px;
+  color: #12365b;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.opportunities-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ANIMAÇÃO */
+
+.opportunities-section .opportunity-card,
+.opportunities-section .opportunities-cta {
+  opacity: 1;
+}
+
+
+/* =========================================
+   WHATSAPP FIXO - CANTO INFERIOR DIREITO
+========================================= */
+
+.whatsapp-floating {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #20b85a;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+  font-size: 30px;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.whatsapp-floating:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.whatsapp-floating i {
+  line-height: 1;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 760px) {
+
+  .opportunities-section {
+    padding: 65px 5%;
+  }
+
+  .opportunities-heading {
+    margin-bottom: 32px;
+  }
+
+  .opportunities-heading h2 {
+    font-size: 30px;
+  }
+
+  .opportunities-heading p {
+    font-size: 13px;
+  }
+
+  .opportunities-section .opportunity-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .opportunities-section .opportunity-card h3 {
+    font-size: 21px;
+  }
+
+  .paraguay-card .opportunity-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .opportunities-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 23px;
+  }
+
+  .opportunities-cta-button {
+    width: 100%;
+  }
+
+  .whatsapp-floating {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
+    font-size: 27px;
+  }
 
 }
 
-/* FRANQUEADO BRANCO EM TODAS AS TELAS */
-.hero h1 span[data-i18n="franchise"] {
-    color: #ffffff !important;
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 430px) {
+
+  .opportunities-section {
+    padding: 55px 16px;
+  }
+
+  .opportunities-heading h2 {
+    font-size: 27px;
+  }
+
+  .opportunities-section .opportunity-card {
+    padding: 21px 17px;
+  }
+
+  .opportunities-section .opportunity-card h3 {
+    font-size: 19px;
+  }
+
+  .qr-code-placeholder {
+    min-height: 190px;
+  }
+
+  .whatsapp-floating {
+    right: 13px;
+    bottom: 13px;
+    width: 52px;
+    height: 52px;
+    font-size: 25px;
+  }
+
 }
