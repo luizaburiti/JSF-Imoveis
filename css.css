@@ -3901,3 +3901,35 @@ html.js-scroll .scroll-reveal.is-visible {
     font-size: 21px;
   }
 }
+.properties-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.properties-more a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 38px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 5px 16px rgba(37, 211, 102, .22);
+  transition: .3s ease;
+}
+
+.properties-more a i {
+  font-size: 21px;
+}
+
+.properties-more a:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, .3);
+}
