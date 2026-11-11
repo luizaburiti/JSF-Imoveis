@@ -3806,11 +3806,12 @@ html.js-scroll .scroll-reveal.is-visible {
 .property-card > img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: 430px;
+  object-fit: contain;
+  object-position: center;
+  background: #eef1f5;
   transition: transform .5s ease;
 }
-
 .property-card:hover > img {
   transform: scale(1.04);
 }
@@ -3881,9 +3882,9 @@ html.js-scroll .scroll-reveal.is-visible {
     gap: 20px;
   }
 
-  .property-card > img {
-    aspect-ratio: 16 / 10;
-  }
+.property-card > img {
+  height: 460px;
+}
 
   .property-info {
     padding: 14px 16px;
