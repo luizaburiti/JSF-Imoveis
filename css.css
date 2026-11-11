@@ -3741,3 +3741,162 @@ html.js-scroll .scroll-reveal.is-visible {
 }
 
 }
+
+/* ================================
+   SEÇÃO DE IMÓVEIS
+================================ */
+
+.properties-section {
+  width: 100%;
+  padding: 90px 6%;
+  background: #f4f7fb;
+}
+
+.properties-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.properties-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.properties-kicker {
+  display: inline-block;
+  color: #2475b9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.properties-heading h2 {
+  color: #142d4b;
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.properties-heading p {
+  color: #68798c;
+  font-size: 15px;
+  margin: 0;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(20, 45, 75, 0.08);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 16px 35px rgba(20, 45, 75, 0.14);
+}
+
+.property-card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.property-card:hover > img {
+  transform: scale(1.04);
+}
+
+.property-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 18px;
+}
+
+.property-info h3 {
+  margin: 0;
+  color: #172d49;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.property-whatsapp {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 23px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, .25);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.property-whatsapp:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, .4);
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .properties-section {
+    padding: 75px 5%;
+  }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .properties-section {
+    padding: 60px 5%;
+  }
+
+  .properties-heading {
+    margin-bottom: 30px;
+  }
+
+  .properties-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .property-card > img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .property-info {
+    padding: 14px 16px;
+  }
+
+  .property-info h3 {
+    font-size: 15px;
+  }
+
+  .property-whatsapp {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 21px;
+  }
+}
