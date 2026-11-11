@@ -3725,4 +3725,19 @@ html.js-scroll .scroll-reveal.is-visible {
     box-sizing: border-box;
   }
 
+   /* MOSTRAR CRECI NO CELULAR */
+@media (max-width: 760px) {
+  .creci-mobile {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: inherit;
+    font-size: 11px;
+  }
+}
+
 }
