@@ -1424,6 +1424,47 @@
     </div>
     <div class="copyright">© 2026 JSF Imóveis · São Paulo</div>
   </footer>
+
+  
+<!-- ASSISTENTE VIRTUAL JSF -->
+<div id="jsf-chat">
+  <button id="jsf-chat-toggle" aria-label="Abrir assistente virtual">
+    <span class="jsf-chat-icon">✦</span>
+    <span class="jsf-chat-label">Fale com nossa IA</span>
+  </button>
+
+  <section id="jsf-chat-window" aria-label="Assistente virtual" hidden>
+    <header class="jsf-chat-header">
+      <div class="jsf-chat-avatar">JSF</div>
+      <div class="jsf-chat-heading">
+        <strong>Assistente JSF</strong>
+        <small>Estou aqui para ajudar você</small>
+      </div>
+      <button id="jsf-chat-close" aria-label="Fechar conversa">×</button>
+    </header>
+
+    <div id="jsf-chat-messages" aria-live="polite">
+      <div class="jsf-chat-message bot">
+        Olá! Seja bem-vindo(a) à JSF Imóveis! 👋
+        <br><br>
+        Posso ajudar você a conhecer nossas franquias, oportunidades, imóveis e muito mais. O que gostaria de saber?
+      </div>
+    </div>
+
+    <form id="jsf-chat-form">
+      <input
+        id="jsf-chat-input"
+        type="text"
+        placeholder="Digite sua mensagem..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit" aria-label="Enviar mensagem">➤</button>
+    </form>
+    <div class="jsf-chat-footer">Assistente virtual • JSF Imóveis</div>
+  </section>
+</div>
+<!-- FIM DO ASSISTENTE VIRTUAL -->
   <script src="script.js"></script>
 
   
