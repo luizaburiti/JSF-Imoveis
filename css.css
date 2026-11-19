@@ -3984,3 +3984,494 @@ html.js-scroll .scroll-reveal.is-visible {
     transform: translateY(-4px);
     box-shadow: 0 12px 28px rgba(32, 185, 91, .35);
 }
+
+
+/* ==========================================
+   ASSISTENTE VIRTUAL JSF IMÓVEIS
+========================================== */
+
+#jsf-chat {
+  position: fixed;
+  right: 25px;
+  bottom: 105px;
+  z-index: 9998;
+  font-family: inherit;
+}
+
+#jsf-chat-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  padding: 13px 20px;
+  background: #102c50;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .2);
+  transition: .3s ease;
+}
+
+#jsf-chat-toggle:hover {
+  background: #174477;
+  transform: translateY(-3px);
+}
+
+.jsf-chat-icon {
+  font-size: 22px;
+  color: #d7b46a;
+}
+
+#jsf-chat-window {
+  position: absolute;
+  right: 0;
+  bottom: 65px;
+  width: 360px;
+  height: 490px;
+  max-height: calc(100vh - 150px);
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, .22);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e8e8e8;
+}
+
+#jsf-chat-window[hidden] {
+  display: none;
+}
+
+.jsf-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  background: #102c50;
+  color: #fff;
+}
+
+.jsf-chat-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #d7b46a;
+  color: #102c50;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.jsf-chat-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.jsf-chat-heading strong {
+  font-size: 15px;
+}
+
+.jsf-chat-heading small {
+  color: #dce6f1;
+  font-size: 11px;
+}
+
+#jsf-chat-close {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#jsf-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f7f8fa;
+}
+
+.jsf-chat-message {
+  max-width: 85%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.jsf-chat-message.bot {
+  align-self: flex-start;
+  background: #fff;
+  color: #26364a;
+  border: 1px solid #e9edf2;
+  border-bottom-left-radius: 4px;
+}
+
+.jsf-chat-message.user {
+  align-self: flex-end;
+  background: #102c50;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.jsf-chat-loading {
+  opacity: .65;
+  font-style: italic;
+}
+
+#jsf-chat-form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+#jsf-chat-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #e0e4e9;
+  border-radius: 25px;
+  padding: 12px 15px;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+#jsf-chat-input:focus {
+  border-color: #102c50;
+}
+
+#jsf-chat-form button {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: #102c50;
+  color: #fff;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+#jsf-chat-form button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.jsf-chat-footer {
+  padding: 0 12px 10px;
+  text-align: center;
+  background: #fff;
+  color: #999;
+  font-size: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  #jsf-chat {
+    right: 15px;
+    bottom: 100px;
+  }
+
+  #jsf-chat-window {
+    position: fixed;
+    right: 12px;
+    left: 12px;
+    bottom: 90px;
+    width: auto;
+    height: min(490px, calc(100dvh - 120px));
+  }
+
+  #jsf-chat-toggle {
+    padding: 12px 16px;
+  }
+}
+
+
+/* OPÇÕES DO ASSISTENTE VIRTUAL */
+
+.jsf-chat-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.jsf-chat-option {
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d9e0e8;
+  border-radius: 12px;
+  background: #fff;
+  color: #102c50;
+  font-size: 12px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.jsf-chat-option:hover {
+  background: #102c50;
+  color: #fff;
+  border-color: #102c50;
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   NOVO VISUAL — CHAT JSF IMÓVEIS
+========================================= */
+
+/* Fonte do assistente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+#jsf-chat,
+#jsf-chat * {
+  font-family: 'Poppins', sans-serif !important;
+  box-sizing: border-box;
+}
+
+/* Botão flutuante */
+#jsf-chat-toggle {
+  background: linear-gradient(135deg, #102c50, #183e68) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 50px !important;
+  padding: 15px 23px !important;
+  box-shadow: 0 8px 30px rgba(10, 35, 65, 0.25) !important;
+  transition: all .3s ease !important;
+}
+
+#jsf-chat-toggle:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 35px rgba(10, 35, 65, 0.35) !important;
+}
+
+.jsf-chat-label {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: .2px !important;
+}
+
+/* Janela do chat */
+#jsf-chat-window {
+  border: 1px solid #e9edf2 !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 65px rgba(13, 35, 60, 0.20) !important;
+}
+
+/* Cabeçalho */
+.jsf-chat-header {
+  background: linear-gradient(135deg, #102c50, #1b426c) !important;
+  padding: 20px !important;
+  border-bottom: 2px solid #c6a56a !important;
+}
+
+.jsf-chat-avatar {
+  background: #fff !important;
+  color: #102c50 !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  border-radius: 13px !important;
+}
+
+.jsf-chat-heading strong {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: -.2px !important;
+}
+
+.jsf-chat-heading small {
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  opacity: .85 !important;
+  letter-spacing: .1px !important;
+}
+
+/* Área das mensagens */
+#jsf-chat-messages {
+  background: #f7f9fc !important;
+  padding: 20px 16px !important;
+  gap: 13px !important;
+}
+
+/* Balões */
+.jsf-chat-message {
+  font-size: 13px !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+  letter-spacing: .05px !important;
+  padding: 13px 16px !important;
+  border-radius: 16px !important;
+  max-width: 88% !important;
+  box-shadow: 0 2px 8px rgba(20, 40, 65, .04) !important;
+}
+
+.jsf-chat-message.bot {
+  background: #fff !important;
+  color: #34445a !important;
+  border: 1px solid #e9edf3 !important;
+  border-bottom-left-radius: 5px !important;
+}
+
+.jsf-chat-message.user {
+  background: #15395f !important;
+  color: #fff !important;
+  border-bottom-right-radius: 5px !important;
+}
+
+/* Botões de opções */
+.jsf-chat-options {
+  gap: 9px !important;
+  margin: 5px 0 10px !important;
+}
+
+.jsf-chat-option {
+  width: 100% !important;
+  padding: 12px 15px !important;
+  border: 1px solid #e1e7ef !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: #183b61 !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  font-weight: 500 !important;
+  letter-spacing: .05px !important;
+  transition: all .25s ease !important;
+}
+
+.jsf-chat-option:hover {
+  background: #102c50 !important;
+  border-color: #102c50 !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Campo de digitação */
+#jsf-chat-form {
+  background: #fff !important;
+  border-top: 1px solid #edf0f4 !important;
+  padding: 13px 14px !important;
+  gap: 10px !important;
+}
+
+#jsf-chat-input {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #24364c !important;
+  border: 1px solid #e1e6ed !important;
+  border-radius: 12px !important;
+  padding: 13px 14px !important;
+  outline: none !important;
+}
+
+#jsf-chat-input:focus {
+  border-color: #b99a62 !important;
+  box-shadow: 0 0 0 3px rgba(185, 154, 98, .10) !important;
+}
+
+#jsf-chat-input::placeholder {
+  color: #9aa5b3 !important;
+  font-size: 11px !important;
+}
+
+/* Rodapé */
+.jsf-chat-footer {
+  font-size: 10px !important;
+  font-weight: 400 !important;
+  letter-spacing: .3px !important;
+  color: #929eac !important;
+  background: #fff !important;
+  padding: 9px !important;
+}
+
+/* Animação suave */
+#jsf-chat-window {
+  transform-origin: bottom right;
+  animation: jsfChatAppear .25s ease;
+}
+
+@keyframes jsfChatAppear {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ajuste para celular */
+@media (max-width: 480px) {
+  .jsf-chat-message {
+    font-size: 12px !important;
+    padding: 12px 14px !important;
+  }
+
+  .jsf-chat-option {
+    font-size: 11px !important;
+    padding: 11px 12px !important;
+  }
+
+  .jsf-chat-heading strong {
+    font-size: 14px !important;
+  }
+}
+
+/* AUMENTAR TIPOGRAFIA DO CHAT JSF */
+
+.jsf-chat-message {
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+.jsf-chat-option {
+  font-size: 13px !important;
+  padding: 13px 16px !important;
+}
+
+.jsf-chat-heading strong {
+  font-size: 16px !important;
+}
+
+.jsf-chat-heading small {
+  font-size: 12px !important;
+}
+
+#jsf-chat-input {
+  font-size: 14px !important;
+  padding: 14px 15px !important;
+}
+
+#jsf-chat-input::placeholder {
+  font-size: 12px !important;
+}
+
+.jsf-chat-label {
+  font-size: 14px !important;
+}
+
+.jsf-chat-footer {
+  font-size: 11px !important;
+}
+
+#jsf-chat-close {
+  font-size: 25px !important;
+}
+
