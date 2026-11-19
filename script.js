@@ -560,3 +560,446 @@ document.querySelectorAll(
   floatingButton.rel = "noopener noreferrer";
 
 })();
+
+
+/* ==========================================
+   ASSISTENTE VIRTUAL PROGRAMADO - JSF IMÓVEIS
+========================================== */
+
+(() => {
+  const toggle = document.getElementById("jsf-chat-toggle");
+  const windowChat = document.getElementById("jsf-chat-window");
+  const close = document.getElementById("jsf-chat-close");
+  const form = document.getElementById("jsf-chat-form");
+  const input = document.getElementById("jsf-chat-input");
+  const messages = document.getElementById("jsf-chat-messages");
+
+  if (!toggle || !windowChat || !form || !input || !messages) return;
+
+  const whatsapp = "5511996924703";
+
+  let nomeVisitante = "";
+  let etapa = "nome";
+  let assuntoAtual = "";
+  let historico = [];
+
+  // Abre e fecha o chat
+  toggle.addEventListener("click", () => {
+    windowChat.hidden = false;
+    toggle.classList.add("chat-open");
+    input.focus();
+  });
+
+  close.addEventListener("click", () => {
+    windowChat.hidden = true;
+    toggle.classList.remove("chat-open");
+  });
+
+  // Adiciona mensagens com segurança
+  function mensagem(texto, tipo = "bot") {
+    const div = document.createElement("div");
+    div.className = `jsf-chat-message ${tipo}`;
+    div.textContent = texto;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  // Cria opções clicáveis
+  function criarOpcoes(opcoes) {
+    const container = document.createElement("div");
+    container.className = "jsf-chat-options";
+
+    opcoes.forEach(opcao => {
+      const botao = document.createElement("button");
+      botao.type = "button";
+      botao.className = "jsf-chat-option";
+      botao.textContent = opcao.texto;
+
+      botao.addEventListener("click", () => {
+        container.remove();
+        mensagem(opcao.texto, "user");
+        opcao.acao();
+      });
+
+      container.appendChild(botao);
+    });
+
+    messages.appendChild(container);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  // Menu principal
+  function menuPrincipal() {
+    etapa = "menu";
+
+    mensagem(
+      `Prazer em conhecer você, ${nomeVisitante}! 😊\n\nO que você gostaria de conhecer melhor na JSF?`
+    );
+
+    criarOpcoes([
+      { texto: "🏢 Franquia gratuita", acao: franquia },
+      { texto: "🏠 Compra e venda de imóveis", acao: imoveis },
+      { texto: "🚀 Oportunidades de negócios", acao: oportunidades },
+      { texto: "🇵🇾 Faculdade de Medicina no Paraguai", acao: paraguai },
+      { texto: "🌎 Morar no Paraguai ou em outro país", acao: morar },
+      { texto: "📚 Cursos e e-books", acao: cursos },
+      { texto: "🤝 Representações e serviços", acao: representacoes },
+      { texto: "💬 Falar com a equipe", acao: atendimento }
+    ]);
+  }
+
+  // Pergunta sobre franquia
+  function franquia() {
+    assuntoAtual = "Franquia gratuita";
+    etapa = "franquia";
+
+    mensagem(
+      "Que ótimo! A JSF trabalha com um modelo de franquia gratuita. 😊\n\nO que você gostaria de saber primeiro?"
+    );
+
+    criarOpcoes([
+      {
+        texto: "Como funciona a franquia?",
+        acao: () => {
+          mensagem(
+            "A JSF apresenta um modelo de franquia sem cobrança de taxa de adesão. Para conhecer os detalhes, critérios e funcionamento, nossa equipe pode orientar você."
+          );
+          continuar();
+        }
+      },
+      {
+        texto: "Quero me tornar franqueado(a)",
+        acao: () => {
+          mensagem(
+            "Que bom saber do seu interesse! Vamos encaminhar seu contato para a equipe responsável explicar as próximas etapas."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Imóveis
+  function imoveis() {
+    assuntoAtual = "Compra e venda de imóveis";
+    etapa = "imoveis";
+
+    mensagem(
+      "Vamos falar sobre imóveis! 🏠\n\nO que você procura?"
+    );
+
+    criarOpcoes([
+      {
+        texto: "Quero comprar um imóvel",
+        acao: () => {
+          mensagem(
+            "Perfeito! Para encontrar uma oportunidade adequada, nossa equipe poderá entender sua localização, perfil e faixa de investimento."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Quero vender meu imóvel",
+        acao: () => {
+          mensagem(
+            "Excelente! A equipe pode orientar você sobre como apresentar seu imóvel e avaliar as possibilidades de divulgação."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Quero conhecer os empreendimentos",
+        acao: () => {
+          mensagem(
+            "Temos oportunidades e empreendimentos que podem ser apresentados pela equipe. Entre em contato para conhecer as opções disponíveis."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Oportunidades
+  function oportunidades() {
+    assuntoAtual = "Oportunidades de negócios";
+    etapa = "oportunidades";
+
+    mensagem(
+      "Temos diferentes oportunidades de negócios! 🚀\n\nQual delas chamou sua atenção?"
+    );
+
+    criarOpcoes([
+      {
+        texto: "Quero investir em um negócio",
+        acao: () => {
+          mensagem(
+            "Ótimo! Nossa equipe poderá apresentar as oportunidades e explicar os modelos disponíveis."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Quero conhecer as oportunidades da JSF",
+        acao: () => {
+          mensagem(
+            "A JSF reúne diferentes oportunidades e soluções. Podemos direcionar você para conhecer as opções disponíveis."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Faculdade no Paraguai
+  function paraguai() {
+    assuntoAtual = "Faculdade de Medicina no Paraguai";
+    etapa = "paraguai";
+
+    mensagem(
+      "Que interessante! 🇵🇾 Você quer conhecer as possibilidades de estudar Medicina no Paraguai?"
+    );
+
+    criarOpcoes([
+      {
+        texto: "Quero informações sobre a faculdade",
+        acao: () => {
+          mensagem(
+            "Nossa equipe poderá orientar você sobre instituições, processo de ingresso, documentação e demais informações. As condições devem ser confirmadas diretamente com a equipe."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Quero saber como funciona o processo",
+        acao: () => {
+          mensagem(
+            "Podemos direcionar você para receber orientações sobre as etapas e os requisitos do processo."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Moradia internacional
+  function morar() {
+    assuntoAtual = "Moradia no exterior";
+    etapa = "morar";
+
+    mensagem(
+      "Vamos conhecer seus planos! 🌎 Onde você pensa em morar?"
+    );
+
+    criarOpcoes([
+      {
+        texto: "Paraguai",
+        acao: () => {
+          mensagem(
+            "Perfeito! Nossa equipe poderá apresentar orientações e oportunidades relacionadas à mudança para o Paraguai."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Outro país",
+        acao: () => {
+          mensagem(
+            "Que interessante! Conte com nossa equipe para conhecer as possibilidades e receber orientações."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Ainda não decidi",
+        acao: () => {
+          mensagem(
+            "Sem problemas! Podemos ajudar você a conhecer as possibilidades antes de decidir."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Cursos e e-books
+  function cursos() {
+    assuntoAtual = "Cursos e e-books";
+    etapa = "cursos";
+
+    mensagem(
+      "A JSF também oferece materiais de conhecimento! 📚\n\nO que você deseja conhecer?"
+    );
+
+    criarOpcoes([
+      {
+        texto: "E-books",
+        acao: () => {
+          mensagem(
+            "Os e-books são materiais de apoio para quem deseja aprender e conhecer novas possibilidades. Nossa equipe pode orientar você sobre os materiais disponíveis."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Cursos EAD",
+        acao: () => {
+          mensagem(
+            "Temos conteúdos e oportunidades de aprendizado. Entre em contato para conhecer os cursos disponíveis."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Representações
+  function representacoes() {
+    assuntoAtual = "Representações e serviços";
+    etapa = "representacoes";
+
+    mensagem(
+      "Você quer conhecer nossas representações e serviços? 🤝"
+    );
+
+    criarOpcoes([
+      {
+        texto: "Quero conhecer os serviços",
+        acao: () => {
+          mensagem(
+            "Nossa equipe poderá apresentar as soluções e os serviços disponíveis."
+          );
+          atendimento();
+        }
+      },
+      {
+        texto: "Tenho interesse em uma parceria",
+        acao: () => {
+          mensagem(
+            "Excelente! Vamos direcionar você para conversar com nossa equipe sobre possibilidades de parceria."
+          );
+          atendimento();
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal }
+    ]);
+  }
+
+  // Encaminhamento para WhatsApp
+  function atendimento() {
+    etapa = "atendimento";
+
+    mensagem(
+      `Perfeito, ${nomeVisitante}! 😊\n\nVou direcionar você para nossa equipe pelo WhatsApp. Assim poderá receber informações mais detalhadas sobre ${assuntoAtual || "seu interesse"}.`
+    );
+
+    criarOpcoes([
+      {
+        texto: "💬 Conversar pelo WhatsApp",
+        acao: () => {
+          const texto = encodeURIComponent(
+            `Olá! Meu nome é ${nomeVisitante} e gostaria de informações sobre: ${assuntoAtual}.`
+          );
+
+          window.open(
+            `https://wa.me/${whatsapp}?text=${texto}`,
+            "_blank",
+            "noopener,noreferrer"
+          );
+        }
+      },
+      { texto: "Voltar ao menu", acao: menuPrincipal },
+      { texto: "Reiniciar conversa", acao: reiniciar }
+    ]);
+  }
+
+  // Continuar conversa
+  function continuar() {
+    criarOpcoes([
+      { texto: "Falar com a equipe", acao: atendimento },
+      { texto: "Conhecer outro assunto", acao: menuPrincipal },
+      { texto: "Reiniciar conversa", acao: reiniciar }
+    ]);
+  }
+
+  // Reiniciar
+  function reiniciar() {
+    nomeVisitante = "";
+    assuntoAtual = "";
+    etapa = "nome";
+    messages.innerHTML = "";
+
+    mensagem(
+      "Olá! Seja muito bem-vindo(a) à JSF Imóveis! 👋\n\nPara começar, como posso te chamar?"
+    );
+  }
+
+  // Primeira mensagem
+  function iniciar() {
+    if (messages.dataset.iniciado === "true") return;
+
+    messages.dataset.iniciado = "true";
+
+    mensagem(
+      "Olá! Seja muito bem-vindo(a) à JSF Imóveis! 👋\n\nPara começar, como posso te chamar?"
+    );
+  }
+
+  iniciar();
+
+  // Recebe mensagens digitadas
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const texto = input.value.trim();
+
+    if (!texto) return;
+
+    mensagem(texto, "user");
+    input.value = "";
+
+    if (etapa === "nome") {
+      nomeVisitante = texto.split(" ")[0];
+
+      setTimeout(menuPrincipal, 350);
+      return;
+    }
+
+    const textoNormalizado = texto.toLowerCase();
+
+    if (
+      textoNormalizado.includes("menu") ||
+      textoNormalizado.includes("voltar")
+    ) {
+      menuPrincipal();
+      return;
+    }
+
+    if (
+      textoNormalizado.includes("atendente") ||
+      textoNormalizado.includes("whatsapp") ||
+      textoNormalizado.includes("humano")
+    ) {
+      atendimento();
+      return;
+    }
+
+    if (etapa === "menu") {
+      mensagem(
+        "Para facilitar nosso atendimento, escolha uma das opções disponíveis acima. 😊"
+      );
+      return;
+    }
+
+    mensagem(
+      "Entendi! 😊 Para te orientar melhor, escolha uma das opções apresentadas ou fale diretamente com nossa equipe."
+    );
+  });
+
+})();
+
